@@ -1,0 +1,64 @@
+<view class="container">
+  <view  bindtap="bindViewTap" class="logo">
+    <image class="logo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  <view class="login">
+    <form bindsubmit="formSubmit">
+      <view class="login-item">
+        <label>手机号</label>
+        <input type="number" name="Email" bindinput="bindKeyInput" placeholder="请输入手机号" maxlength="11"/>
+        <button class="verify {{active ? 'on' : '' }}" bindtap="getVerify">{{code}}</button>
+      </view>
+      <view class="login-item">
+        <label>验证码</label>
+        <input type="number" name="PassWord" placeholder="请输入验证码" bindinput="bindVerify"/>
+      </view>
+      <view class="login-item">
+        <label>性　别</label>
+        <radio-group class="radio-group flex-row" bindchange="radioChange" name="Sex">
+          <label class="radio" wx:for="{{sex}}" wx:key="{{item.name}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="login-item login-shadow">
+        <label>地　区</label>
+        <p bindtap="locate" class="flex-row-start">
+          <input type="text" name="Province" value="{{provinces[province].name}}" class="inblock"/>
+          <input type="text" name="City" value="{{provinces[province].cities[city]}}" class="inblock"/> 
+        </p>
+      </view>
+      <view class="hide">
+        <input type="text" name="WeChatUserId" value='{{openId}}'/>
+        <input type="text" name="Country" value="中国"/>
+        <input type="text" name="HeadImgUrl" value="{{userInfo.avatarUrl}}"/>
+        <input type="text" name="NickName" value="{{userInfo.nickName}}"/>
+        <input type="text" name="MeterType" value="7"/>
+        <input type="text" name="RegistType" value="0"/>
+      </view>
+      <view>
+        <button type="{{mobile && register ? 'primary' : 'default' }}" class="margin-center" size="default" formType="submit"> 注　册 </button>
+      </view>
+    </form>
+    <view class="margin-center flex-row">
+      <label></label>
+      <view class="turn" bindtap="login">登录</view>
+    </view>
+  </view>
+  <view class="bomb" wx:if="{{ locateChange }}">
+    <view class="flex-row">
+      <view class="locateCacel" bindtap="locateCacel">取消</view>
+      <view class="locateOk" bindtap="locateOk">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" value="{{temp}}" class="locatePicker" bindchange="provinceChange">
+      <picker-view-column class="empty"></picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="{{item.name}}" class="locateItem">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{cities}}" wx:key="{{item}}" class="locateItem">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column class="empty"></picker-view-column>
+    </picker-view>
+  </view>
+</view>

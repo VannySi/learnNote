@@ -1,0 +1,12 @@
+@import "../login/login.wxss";
+
+.container{
+    font-size: 90%;
+}
+
+button.verify {
+    font-size: 80%;
+    margin: 0;
+    padding:10rpx;
+    line-height:1.5;
+}

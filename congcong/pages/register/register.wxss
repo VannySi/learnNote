@@ -1,0 +1,122 @@
+/* pages/register/register.wxss */
+page{
+  height: 100%;
+}
+.container {
+  font-size: 90%;
+  background-color: #f5f5f5;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.login {
+  width: 100%;
+  margin: 80rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.login-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 6%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.login-item > label{
+  padding-right: 18rpx;
+  margin-right: 25rpx;
+  border-right: 1rpx solid #e5e5e5;
+}
+
+.login-shadow{
+  box-shadow: 0 5rpx 20rpx #e5e5e5;
+}
+
+.login button{
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.margin-center{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.turn{
+  color: #1AAD19;
+}
+
+button.verify {
+  width: 4.5rem;
+  color: #aaa;
+  font-size: 80%;
+  margin: 0;
+  padding:15rpx;
+  line-height:1.5;
+}
+
+button.verify.on{
+  color: #fff;
+  background: #1AAD19;
+}
+
+.radio-group{
+    flex: 0.45;
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+}
+
+.locatePicker{
+    width: 100%; 
+    height: 600rpx;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.locateItem{
+    line-height: 100rpx; 
+    text-align: center
+}
+
+.empty{
+    flex: 0.35;
+}
+
+.bomb .flex-row{
+    width: 100%;
+    position: absolute;
+    bottom: 600rpx;
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.locateCacel, 
+.locateOk{
+    color: #999;
+    cursor: pointer;
+    padding: 20rpx 10rpx;
+}
+
+.locateOk{
+    color: #1AAD19;
+}

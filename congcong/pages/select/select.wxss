@@ -1,0 +1,11 @@
+.pd{
+  width: 75%;
+  text-align: center;
+}
+text{
+  display: block;
+  margin-bottom: 400rpx;
+}
+button{
+  margin: 50rpx 0;
+}

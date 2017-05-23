@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/readily/readily",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/select/select",
+    "pages/readily/readily"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

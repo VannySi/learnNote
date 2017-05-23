@@ -1,0 +1,26 @@
+<view class="container">
+  <view  bindtap="bindViewTap" class="logo">
+    <image class="logo-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  <view class="login">
+    <form bindsubmit="formSubmit">
+      <view class="login-item">
+        <label>手机号</label>
+        <input type="number" bindinput="bindKeyInput" placeholder="仅支持中国大陆手机号" maxlength="11"/>
+        <button class="verify">获取验证码</button>
+      </view>
+      <view class="login-item login-shadow">
+        <label>验证码</label>
+        <input type="number" placeholder="请输入验证码"/>
+      </view>
+      <view>
+        <button class="margin-center" type="warn" size="default" bindtap="primary"> 验证手机 </button>
+      </view>
+    </form>
+    <view class="margin-center flex-row">
+      <label>
+      </label>
+      <view class="turn" bindtap="login">登录</view>
+    </view>
+  </view>
+</view>

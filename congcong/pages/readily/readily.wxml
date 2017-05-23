@@ -1,0 +1,17 @@
+<!--readily.wxml-->
+<view class="container">
+  <view class="image-upload">
+    <form>
+      <view>
+        <textarea auto-height placeholder="添加描述" class="about"/>
+      </view>
+      <view class="image-compress" bindtap="uploadImage">
+        <image wx:if="{{source}}" src="{{source}}"></image>
+        <view  wx:if="{{!source}}" class="uploadImage">+</view>
+      </view>
+      <view>
+        <button size="default" bindtap="primary"> 提  交 </button>
+      </view>
+    </form>
+  </view>
+</view>

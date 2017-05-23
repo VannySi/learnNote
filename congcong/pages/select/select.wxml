@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="pd">
+    <text>选择您要参加的活动</text>
+    <button type="primary" bindtap="readily">周围随手拍</button>
+    <button bindtap="ads">软  广</button>
+    <button bindtap="readily">其  它</button>
+  </view>
+</view>

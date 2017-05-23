@@ -1,0 +1,24 @@
+/* readily.wxss */
+.image-upload{
+  width: 90%;
+}
+.about{
+  width: 90%;
+  padding: 20rpx 4.8%;
+  border: 1rpx solid #e5e5e5;
+}
+.image-compress{
+  min-height: 280rpx;
+  margin:  40rpx 0;
+  background-color: #fff;
+  border: 1rpx solid #e5e5e5;
+}
+.image-compress image{
+  width: 100%;
+}
+.image-compress .uploadImage{
+  color: #e5e5e5;
+  line-height: 280rpx;
+  font-size: 500%;
+  text-align: center;
+}
