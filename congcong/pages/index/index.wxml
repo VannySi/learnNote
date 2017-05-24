@@ -31,6 +31,7 @@
       <view class="image-compress">
        <view wx:for="{{source}}" wx:key="{{source}}">
           <image src="{{source[index]}}"></image>
+          <textarea auto-height placeholder="添加描述(必填)" class="about"/>
         </view>
         <view  wx:if="{{source.length < 6}}" class="uploadImage" bindtap="uploadImage">+</view>
       </view>

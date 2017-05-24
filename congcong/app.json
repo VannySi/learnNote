@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/readily/readily",
+    "pages/index/index",
     "pages/login/login",
     "pages/register/register",
-    "pages/index/index",
     "pages/select/select",
     "pages/readily/readily"
   ],
