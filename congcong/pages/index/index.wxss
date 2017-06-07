@@ -39,27 +39,26 @@ page{
   width: 90%;
   min-height: 280rpx;
   margin:  40rpx 0;
-  padding: 30rpx 5%;
+  padding: 40rpx 6%;
   background-color: #fff;
   border-top: 1rpx solid #e5e5e5;
   border-bottom: 1rpx solid #e5e5e5;
 }
 
 .image-compress view{
-  width: 150rpx;
-  height: 150rpx;
-  margin-right: 25rpx;
-  margin-top: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 35rpx;
+  margin-top: 40rpx;
   overflow: hidden;
 }
 
 .image-compress view:first-child,
-.image-compress view:nth-child(4),
 .image-compress view:nth-child(2),
 .image-compress view:nth-child(3){
   margin-top: 0;
 }
-.image-compress view:nth-child(4n){
+.image-compress view:nth-child(3n){
   margin-right: 0;
 }
 
@@ -69,11 +68,11 @@ page{
 }
 
 .image-compress .uploadImage{
-  width: 148rpx;
-  height: 150rpx;
+  width: 198rpx;
+  height: 200rpx;
   font-size: 300%;
   text-align: center;
-  line-height: 150rpx;
+  line-height: 200rpx;
   border: 1px dashed #ccc;
 }
 

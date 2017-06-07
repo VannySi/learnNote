@@ -36,7 +36,7 @@
         <view  wx:if="{{source.length < 6}}" class="uploadImage" bindtap="uploadImage">+</view>
       </view>
       <view>
-        <button size="default" bindtap="primary"> 上　传 </button>
+        <button size="default" bindtap="primary" type="{{mobile && register ? 'primary' : 'default' }}"> 上　传 </button>
       </view>
     </form>
   </view>

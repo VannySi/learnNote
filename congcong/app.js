@@ -17,21 +17,21 @@ App({
         })
         if (res.code) {
           // 获取用户的openId
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session',
-            data: {
-              appid: 'wx618260b24ca96252',
-              secret: 'c2018ecabf66f91a78fd05d8f2428395',
-              js_code: res.code,
-              grant_type: 'authorization_code'
-            },
-            success: function (result) {
-              // console.log(result.data.openid)
-              that.globalData.openId = result.data.openid;
-              // that.getLogin(callback);
-              typeof callback == "function" && callback(that.globalData.openId);
-            }
-          })
+          // wx.request({
+          //   url: 'https://api.weixin.qq.com/sns/jscode2session',
+          //   data: {
+          //     appid: 'wx618260b24ca96252',
+          //     secret: 'c2018ecabf66f91a78fd05d8f2428395',
+          //     js_code: res.code,
+          //     grant_type: 'authorization_code'
+          //   },
+          //   success: function (result) {
+          //     // console.log(result.data.openid)
+          //     that.globalData.openId = result.data.openid;
+          //     // that.getLogin(callback);
+          //     typeof callback == "function" && callback(that.globalData.openId);
+          //   }
+          // })
         } else {
           console.log('获取用户登录状态失败！' + res.errMsg)
         }
@@ -91,6 +91,6 @@ App({
   // 全局信息
   globalData:{
     userInfo:null,
-    openId: null
+    openId: ' wx618260b24ca96252'
   }
 })

@@ -1,16 +1,18 @@
 <!--readily.wxml-->
 <view class="container">
   <view class="image-upload">
-    <form>
+    <form bindsubmit="formSubmit">
       <view>
-        <textarea auto-height placeholder="添加描述" class="about"/>
+        <textarea auto-height placeholder="添加描述" class="about" bindinput="textChange"/>
       </view>
-      <view class="image-compress" bindtap="uploadImage">
-        <image wx:if="{{source}}" src="{{source}}"></image>
-        <view  wx:if="{{!source}}" class="uploadImage">+</view>
+      <view class="image-compress">
+        <view wx:for="{{source}}" wx:key="{{source}}">
+          <image src="{{source[index]}}"></image>
+        </view>
+        <view  wx:if="{{source.length < 3}}" class="uploadImage" bindtap="uploadImage">+</view>
       </view>
       <view>
-        <button size="default" bindtap="primary"> 提  交 </button>
+        <button size="default" type="{{source.length && describe ? 'primary' : 'default' }}" formType="submit"> 提  交 </button>
       </view>
     </form>
   </view>
