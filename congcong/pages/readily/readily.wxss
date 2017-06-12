@@ -1,22 +1,29 @@
 /* readily.wxss */
 @import '../index/index.wxss';
 
-.image-upload{
-  /*width: 90%;*/
-}
-.about{
+/*.image-upload{
   width: 90%;
-  padding: 20rpx 4.8%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: #fff;
-}
+}*/
 .image-compress{
   min-height: 160rpx;
   /*margin:  40rpx 0;*/
   /*background-color: #fff;*/
   /*border: 1rpx solid #e5e5e5;*/
+}
+.image-compress view{
+  height: 200rpx;
+  overflow: hidden;
+}
+.readily-about{
+  width: 100%;
+  min-height: 80rpx;
+  padding: 20rpx 4.8%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom:1rpx solid #e5e5e5;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 /*.image-compress{
   min-height: 280rpx;

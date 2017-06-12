@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/readily/readily",
     "pages/index/index",
     "pages/login/login",
     "pages/register/register",

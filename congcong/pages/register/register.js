@@ -198,9 +198,10 @@ Page({
     }
   },
   bindVerify: function(e){
-    // 验证码验证：8位数字
+    // 验证码验证：不为空
     // console.log(e.detail.value);
-    if (/^\d{8}$/.test(e.detail.value)) {
+    // if (/^\d{8}$/.test(e.detail.value)) {
+    if (e.detail.value) {
       this.setData({
         register: true
       });

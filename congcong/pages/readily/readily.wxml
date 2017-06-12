@@ -3,7 +3,7 @@
   <view class="image-upload">
     <form bindsubmit="formSubmit">
       <view>
-        <textarea auto-height placeholder="添加描述" class="about" bindinput="textChange"/>
+        <textarea auto-height placeholder="添加描述" class="readily-about" bindinput="textChange"/>
       </view>
       <view class="image-compress">
         <view wx:for="{{source}}" wx:key="{{source}}">
@@ -12,7 +12,8 @@
         <view  wx:if="{{source.length < 3}}" class="uploadImage" bindtap="uploadImage">+</view>
       </view>
       <view>
-        <button size="default" type="{{source.length && describe ? 'primary' : 'default' }}" formType="submit"> 提  交 </button>
+        <!--<button size="default" type="{{source.length && describe ? 'primary' : 'default' }}" formType="submit"> 提  交 </button>-->
+        <button size="default" type="{{source.length ? 'primary' : 'default' }}" formType="submit"> 提  交 </button>
       </view>
     </form>
   </view>

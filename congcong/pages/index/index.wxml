@@ -1,42 +1,44 @@
 <view class="container">
   <view class="image-upload">
-    <form>
+    <form bindsubmit="formSubmit">
       <view class="flex-row">
         <label>手 机 号</label>
-        <input type="number" bindinput="bindKeyInput" placeholder="请输入手机号" maxlength="11"/>
+        <input type="number" name="Mobile" bindinput="bindKeyInput" placeholder="请输入手机号" maxlength="11"/>
       </view>
       <view class="flex-row">
         <label>选择时间</label>
         <view class="picker">
-          <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+          <picker mode="date" value="{{date}}" name="date" bindchange="bindDateChange">
               {{date}}
           </picker>
-          <picker mode="time" value="{{time}}"  bindchange="bindTimeChange">
+          <picker mode="time" value="{{time}}" name="time" bindchange="bindTimeChange">
               {{time}}
           </picker>
         </view>
       </view>
       <view class="flex-row">
         <label>电视频道</label>
-        <input type="text" bindinput="bindKeyInput" placeholder="如:CCTV-1"/>
+        <input type="text" name="Channel" bindinput="bindKeyInput" placeholder="如:CCTV-1"/>
       </view>
       <view class="flex-row">
         <label>节目名称</label>
-        <input type="text" bindinput="bindKeyInput" placeholder="如:完美人生"/>
+        <input type="text" name="ProgramName" bindinput="bindKeyInput" placeholder="如:完美人生"/>
       </view>
-      <view class="flex-row">
+      <!--<view class="flex-row">
         <label>节目名称</label>
         <input type="text" bindinput="bindKeyInput" placeholder="如:"/>
-      </view>
+      </view>-->
       <view class="image-compress">
        <view wx:for="{{source}}" wx:key="{{source}}">
-          <image src="{{source[index]}}"></image>
-          <textarea auto-height placeholder="添加描述(必填)" class="about"/>
+          <view>
+            <image src="{{source[index]}}"></image>
+          </view>
+          <input placeholder="添加描述(必填)" name="des[{{index}}]" class="about"/>
         </view>
         <view  wx:if="{{source.length < 6}}" class="uploadImage" bindtap="uploadImage">+</view>
       </view>
       <view>
-        <button size="default" bindtap="primary" type="{{mobile && register ? 'primary' : 'default' }}"> 上　传 </button>
+        <button size="default" bindtap="primary" type="primary" formType="submit"> 上　传 </button>
       </view>
     </form>
   </view>

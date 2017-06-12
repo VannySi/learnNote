@@ -13,6 +13,11 @@ Page({
       userInfo: app.globalData.userInfo
     });
     that.loginState();
+    app.getLogin(function(data){
+      that.setData({
+        loginChange: data.Success ? 1 : 0
+      });
+    });
     setTimeout(function(){
       wx.checkSession({
         success: function () {

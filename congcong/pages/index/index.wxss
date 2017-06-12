@@ -47,10 +47,14 @@ page{
 
 .image-compress view{
   width: 200rpx;
-  height: 200rpx;
+  height: 260rpx;
   margin-right: 35rpx;
   margin-top: 40rpx;
-  overflow: hidden;
+  /*overflow: hidden;*/
+}
+
+.image-compress view view{
+  height: 200rpx;
 }
 
 .image-compress view:first-child,
@@ -78,7 +82,20 @@ page{
 
 .about{
   width: 100%;
-  height: 25px;
-  padding: 10rpx;
+  /*height: 40rpx;*/
+  font-size: 12px;
+  /*line-height: 1.2;*/
+  margin-top: 8rpx;
+  padding: 0 10rpx;
   border: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
 }
+
+/*.about{
+  width: 90%;
+  padding: 20rpx 4.8%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #fff;
+}*/

@@ -23,6 +23,9 @@ Page({
       },
       success: function (res) {
         console.log(res.data);
+        // that.setState({
+        //   activityId: res.data
+        // });
       }
     })
 
@@ -102,21 +105,95 @@ Page({
   formSubmit: function(e){
     var that = this;
     var path = this.data.source;
-    var groupId = new Date().getTime();
-    for(var i = 0; i < path.length; i++){
-      wx.uploadFile({
-        url: 'https://cn2service.ictr.cn/api/WeChatAPI/SearchPhotoUploadWeeklyPhotograph',
-        filePath: path[i],
-        name: 'file', 
-        formData: {
-          activityId: that.data.activityId,
-          openId: getApp().globalData.openId,
-          groupId: groupId
-        },
-        success: function (res) {
-          console.log(res.data);
+    // if (path.length && this.data.describe) {
+    if (path.length){
+      var groupId = new Date().getTime();
+      var bug = false; //是否上传成功
+      for (var i = 0; i < path.length; i++) {
+        wx.uploadFile({
+          url: 'https://cn2service.ictr.cn/api/WeChatAPI/SearchPhotoUploadWeeklyPhotograph',
+          filePath: path[i],
+          name: 'file',
+          formData: {
+            activityId: that.data.activityId,
+            openId: getApp().globalData.openId,
+            groupId: groupId
+          },
+          success: function (res) {
+            var data = JSON.parse(res.data);
+            console.log(data);
+            if (!data.Success){
+              bug = true;
+              wx.showModal({
+                title: '提示',
+                content: '上传失败，请重新上传',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定')
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              });
+            }
+          }
+        });
+        if(bug){
+          break;
         }
-      })
+      }
+      if(!bug){
+        wx.request({
+          url: 'https://cn2service.ictr.cn/api/WeChatAPI/SaveImageGroupInfoWeeklyPhotograph',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          method: 'POST',
+          data: {
+            GroupID: groupId,
+            Description: that.data.describe,
+            tags1: '',
+            tags2: ''
+          },
+          success: function (res) {
+            console.log(res.data);
+            if (!res.data) {
+              wx.showModal({
+                title: '提示',
+                content: '上传失败，请重新上传',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定')
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              });
+            } else {
+              wx.showModal({
+                title: '提示',
+                content: '上传成功',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    // 关闭当前页面，跳转到注册
+                    wx.redirectTo({
+                      url: '/pages/select/select'
+                    })
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              });
+            }
+          },
+          fail: function (res) {
+            //fail( res );
+          }
+        });
+      }
     }
   }
 })
